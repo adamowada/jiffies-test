@@ -1,0 +1,204 @@
+/* CSS file for Construction Safety WebApp */
+
+/* Rule 1: Group related elements */
+/* Rule 2: Be consistent */
+/* Rule 3: Ensure similar looking elements function similarly */
+/* Rule 5: Remove unnecessary styles */
+/* Rule 10: Use a single sans serif typeface */
+/* Rule 12: Limit the use of uppercase */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Rule 4: Create a clear visual hierarchy */
+/* Rule 6: Use color purposefully */
+/* Rule 7: Ensure interface elements have a 3:1 contrast ratio */
+/* Rule 8: Ensure text has a 4.5:1 contrast ratio */
+/* Rule 14: Avoid pure black text */
+a {
+  color: #5c8cc5;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3a5c85;
+  text-decoration: underline;
+}
+
+/* Rule 11: Use a typeface with taller lower case letters */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Rule 13: Use regular and bold font weights only */
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+/* Rule 15: Left align text */
+/* Rule 16: Use at least 1.5 line height for body text */
+p {
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* Rule 9: Don’t rely on color alone as an indicator */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 0.5rem 0;
+}
+
+li i {
+  color: #5c8cc5;
+  margin-right: 0.5rem;
+}
+
+/* Navigation */
+nav {
+  background-color: #5c8cc5;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav a {
+  color: white;
+  font-size: 1.1rem;
+}
+
+nav a:hover {
+  color: #3a5c85;
+}
+
+/* Main content */
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+main section {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+main img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background-color: #5c8cc5;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2rem;
+}
+
+/* Animations and Gradients */
+/* Rule 6: Use color purposefully */
+/* Button hover effect */
+a {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #5c8cc5;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+  z-index: -1;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+}
+
+/* Gradient for navigation */
+nav {
+  background-image: linear-gradient(135deg, #5c8cc5 0%, #3a5c85 100%);
+}
+
+/* Gradient for footer */
+footer {
+  background-image: linear-gradient(135deg, #5c8cc5 0%, #3a5c85 100%);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+main section {
+  animation: fadeIn 0.5s ease-out;
+}
+
+main section:nth-child(even) {
+  animation-delay: 0.3s;
+}
+
+main section:nth-child(odd) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  h2 {
+      font-size: 1.5rem;
+  }
+
+  p {
+      font-size: 0.9rem;
+  }
+
+  nav a {
+      font-size: 1rem;
+  }
+}
